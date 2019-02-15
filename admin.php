@@ -8,6 +8,66 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
     exit;
 }
 ?>
+<script src="scripts/afficher.js" type="text/javascript"></script>
+
+
+<div class="row mbr-justify-content-center">
+	<div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+		
+			<!-- Formulaire recherche -->
+			<div class='row'>
+				<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+					<h4>Recherche de ressources :</h4>
+				</div>
+			</div>
+			<form name='formulaire_ressource'>	
+				<div class='row'>	
+					<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+						<div class="input-group mb-1">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="nom_input">Nom</span>
+							</div>
+							<input type="text" class="form-control" aria-describedby="nom_input" name='nom'>
+						</div>
+					</div>
+				
+					<button id='recherche_ressource' type="button" name='recherche_ressource' value='Rechercher' class='btn btn-outline-secondary'>Rechercher</button>
+				</div><br/>
+			</form>
+			
+			<div id='ressources'></div>
+		</div>
+	</div>
+	
+	
+	<div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+			<div class='row'>
+				<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+					<h4>Recherche de chercheurs :</h4>
+				</div>
+			</div>
+			<form name='formulaire_chercheurs'>	
+				<div class='row'>	
+					<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+						<div class="input-group mb-1">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="nom_input">Nom</span>
+							</div>
+							<input type="text" class="form-control" aria-describedby="nom_input" name='nom'>
+						</div>
+					</div>
+				
+				<button id='recherche_chercheurs' type="button" name='recherche_chercheurs' value='Rechercher' class='btn btn-outline-secondary'>Rechercher</button>
+				</div><br/>
+			</form>
+			
+			<div id='searchers'></div>
+		</div>
+	</div>
+</div>
+	
 
 <form class="form-group" action="logout.php" method="post">
 	<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
