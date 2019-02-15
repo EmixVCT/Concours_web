@@ -16,8 +16,8 @@ if (mysqli_num_rows($resultat) != 0){ ?>
 	<div class="table-responsive table-wrapper-scroll-y table-sm table-condenced ">
 		<table id='tab_searcher' border=1 align='center' class="table table-striped">
 			<thead align="center"><tr>
-				<th align="center">NOM</th>
-				<th></th>
+				<th align="center">Nom</th>
+				<th align="center">Actions</th>
 			</tr></thead>
 		<tbody>
 		<?php
@@ -29,7 +29,7 @@ if (mysqli_num_rows($resultat) != 0){ ?>
 				}
 			}
 			?>
-			<td align="center" > <input type='button' class="btn btn-outline-danger" name='supp' value='supprimer' onclick='supprimerLig("<?php echo $ligne[0]; ?>","id_usr","utilisateur")'/></td>
+			<td align="center" > <input type='button' class="btn btn-outline-danger" name='supp' value='Supprimer' onclick='supprimerLig("<?php echo $ligne[0]; ?>","id_usr","utilisateur")'/></td>
 			<!--<td align="center"> <input type='button' class="btn btn-outline-primary" name='modif' value='modifier' onclick='modifierChercheur("<?php //echo $ligne[0]; ?>")'/></td>-->
 			</tr>
 			<?php

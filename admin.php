@@ -17,13 +17,13 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 		
 			<!-- Formulaire recherche -->
 			<div class='row'>
-				<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+				<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					<h4>Recherche de ressources :</h4>
 				</div>
 			</div>
 			<form name='formulaire_ressource'>	
 				<div class='row'>	
-					<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+					<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 						<div class="input-group mb-1">
 							<div class="input-group-prepend">
 								<span class="input-group-text" id="nom_input">Nom</span>
@@ -35,6 +35,14 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			</form>
 			
 			<div id='ressources'></div>
+			
+			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+				<h4>
+				Ajouter une nouvelle ressource
+				<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				</h4>
+			</div>
+
 		</div>
 	</div>
 	
@@ -42,13 +50,13 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 	<div class="col-lg-6 mbr-col-md-10">
         <div class="wrap">
 			<div class='row'>
-				<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+				<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 					<h4>Recherche de chercheurs :</h4>
 				</div>
 			</div>
 			<form name='formulaire_chercheurs'>	
 				<div class='row'>	
-					<div class='col-xs-1 col-sm-11 col-md-8 col-lg-6'>
+					<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 						<div class="input-group mb-1">
 							<div class="input-group-prepend">
 								<span class="input-group-text" id="nom_input">Nom</span>
@@ -60,6 +68,15 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			</form>
 			
 			<div id='searchers'></div>
+			
+			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+				<h4>
+				Ajouter un nouveau chercheur :
+				<form action="ajout_chercheur.php" method="POST">
+					<button id ="ajouter_chercheur" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				</form>
+				</h4>
+			</div>
 		</div>
 	</div>
 </div>

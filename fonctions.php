@@ -43,22 +43,17 @@
                 return True;
             }
         }
-
         return False;
     }
-	/*
+	
     function redirigerBonnePage() { //Redirige un utilisateur sur sa page associée
         if (estConnecte()) {
             if ($_SESSION['role'] == "admin") { #Si il s'agit d'un admin
                 header('Location: admin.php');
                 exit;
             }
-            else if ($_SESSION['role'] == "etudiant") { #Si il s'agit d'un étudiant
-                header('Location: vote.php');
-                exit;
-            }
-            else if ($_SESSION['role'] == "professeur") { #Sinon il s'agit d'un prof
-                header('Location: prof.php');
+            else if ($_SESSION['role'] == "chercheur") { #Si il s'agit d'un étudiant
+                header('Location: accueil.php');
                 exit;
             }
         }
@@ -66,6 +61,6 @@
             header("Location: index.php");
             exit;
         }
-    }*/
+    }
 	
 ?>

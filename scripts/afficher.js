@@ -2,19 +2,6 @@ window.onload = initPage;
 
 
 function initPage(){
-	xhrRessource = new XMLHttpRequest();
-	xhrRessource.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("ressources").innerHTML = this.responseText;
-		}
-	};
-	
-	xhrSearcher = new XMLHttpRequest();
-	xhrSearcher.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("searchers").innerHTML = this.responseText;
-		}
-	};
 	
 	var searchInput = document.getElementById("input_chercheur");
 	addListenerMulti(searchInput, "change keydown paste input",function (event) {show_searcher();} );
@@ -33,6 +20,13 @@ function addListenerMulti(el, s, fn) {
 }
 
 function show_ressource(){
+	xhrRessource = new XMLHttpRequest();
+	xhrRessource.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("ressources").innerHTML = this.responseText;
+		}
+	};
+	
 	stringSend = "";
 	elemForm = document.getElementsByName("formulaire_ressource")[0];
 	
@@ -46,6 +40,13 @@ function show_ressource(){
 }
 
 function show_searcher(){
+	xhrSearcher = new XMLHttpRequest();
+	xhrSearcher.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("searchers").innerHTML = this.responseText;
+		}
+	};
+	
 	stringSend = "";
 	elemForm = document.getElementsByName("formulaire_chercheurs")[0];
 	
@@ -80,10 +81,6 @@ function supprimerLig(id,cond,tab){
 	xhrSupp.open("POST","scripts/supp_ligne.php",true);
 	xhrSupp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xhrSupp.send(entete);
-	
-
-	
-	
 }
 
 
