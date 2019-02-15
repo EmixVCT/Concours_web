@@ -10,7 +10,7 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 ?>
 <script src="scripts/afficher.js" type="text/javascript"></script>
 
-<div id="erreur"></div>
+
 <div class="row mbr-justify-content-center">
 	<div class="col-lg-6 mbr-col-md-10">
         <div class="wrap">
@@ -37,12 +37,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			<div id='ressources'></div>
 			
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-				
-				<form action="ajout_ressources.php" method="POST">
-					<h4>
-					Ajouter une nouvelle ressource :
-					<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
-				</form>
+				<h4>
+				Ajouter une nouvelle ressource
+				<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
 				</h4>
 			</div>
 
@@ -73,10 +70,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			<div id='searchers'></div>
 			
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-				
+				<h4>
+				Ajouter un nouveau chercheur :
 				<form action="ajout_chercheur.php" method="POST">
-					<h4>
-					Ajouter un nouveau chercheur :
 					<button id ="ajouter_chercheur" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
 				</form>
 				</h4>
@@ -85,11 +81,21 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 	</div>
 </div>
 	
-
-<form class="form-group" action="logout.php" method="post">
-	<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
-</form>
-
+<table>
+		<tr>
+			<td>
+				<form class="form-group" action="creationPDF.php" method="post">
+					<input type="date" name="date" id="date"></input>
+					<button type="submit" class="btn btn-info">Générer le PDF</button>
+				</form>
+			</td>
+			<td>
+				<form class="form-group" action="logout.php" method="post">
+					<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
+				</form>
+			</td>
+		</tr>
+    </table>
 
 <?php
 require_once($fichiersInclude.'footer.html'); 
