@@ -12,19 +12,20 @@ if ( (isset($_POST['id']) && isset($_POST['pwd'])) AND !(empty($_POST['id']) && 
 			
 			if ($rowcount == 1) { //test si on a un resultat
 				$lig = mysqli_fetch_assoc($res);
-				if($lig['rang'] == 1){
+				
+				$_SESSION['id'] = $lig['nom'];
+
+				if($lig['rang'] == 1){ //Si c'est un chercheur
 					$_SESSION['role'] = "chercheur";
 					header('Location: accueil.php');
 					exit;
-				}else{
+				}else{ //Sinon c'est un admin
 					$_SESSION['role'] = "admin";
 					header('Location: admin.php');
 					exit;
 				}
-				$_SESSION['role'] = $lig['rang'];
-				header('location: index.php');
-				exit();
-			}else{
+
+			}else{ //pas de mdp et login correct trouver (redirection)
 				header('Location: connect.php?erreur='.sha1("C'est une erreur !"));
 				exit;
 			}
