@@ -1,10 +1,11 @@
 <?php	
-require_once("include/header.html");
+include "include/header.html";
 ?>
 	
-	<br/><h1>Index</h1>
-	<p><a href="connect.php">Page d'identification</a></p>
+	<br/><h1>Accueil</h1>
+	
+	<p><a href="connect.php" target="_blank"> <input type="button" value="S'authentifier" class="btn btn-danger" style="margin:10px;"></a></p>
 
 <?php	
-require_once("include/footer.html");
+include "include/footer.html";
 ?>
