@@ -6,11 +6,11 @@ if ( (isset($_POST['id']) && isset($_POST['pwd'])) AND !(empty($_POST['id']) && 
 
 		$login = htmlspecialchars($_POST["id"]);
 		$mdp = hash("sha512",htmlspecialchars($_POST["pwd"]));	
-		$req = "SELECT * FROM utilisateur WHERE nom like \"$login\" and mdp like \"$mdp\"";
 
-		$res = $connexion->query($req);
+		$req = $connexion->prepare('SELECT * FROM utilisateur WHERE nom like ? and mdp like ?');
+		$req->execute(array($login, $mdp));
 
-		while ($donnees = $res->fetch())
+		while ($donnees = $req->fetch())
 		{
 			print_r($donnees);
 
@@ -33,7 +33,7 @@ if ( (isset($_POST['id']) && isset($_POST['pwd'])) AND !(empty($_POST['id']) && 
 			}
 		}
 
-		$res->closeCursor();
+		$req->closeCursor();
 	 	//Pas de mdp et login correct trouvés (redirection)
 		header('Location: connect.php?erreur='.sha1("C'est une erreur !"));
 		exit;
