@@ -11,8 +11,7 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 if ( (isset($_POST['pwd_conf'],$_POST['pwd'],$_POST["id"])) AND !(empty($_POST['id']) && empty($_POST['pwd']) && empty($_POST['pwd_conf'])) ) { #On vérifie la validité du formulaire
 
 	if ($_POST['pwd_conf'] == $_POST['pwd']){
-		
-		$req = "INSERT INTO utilisateur (nom,mdp,rang) VALUES ('".$_POST['id']."','".hash('sha512',$_POST['pwd'])."',1);";
+		$req = "INSERT INTO utilisateur (nom,mdp,rang) VALUES ('".$_POST['id']."','".hash("sha512", $_POST['pwd'])."',1);";
 		mysqli_query($connexion,$req) or die('Erreur SQL !<br />'.mysqli_error($connexion));
 		header('Location: admin.php');
 	}else{
@@ -61,7 +60,7 @@ else { #Si l'envoi du formulaire est incorrect ou que l'on accède à la page d'
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 			  <label for="pwd_conf">Mot de passe (confirmation) :</label>
-			  <input type="password" class="form-control" id="pwd_conf" name="pwd_conf" placeholder="Mot de passe" required>
+			  <input type="password_conf" class="form-control" id="pwd_conf" name="pwd_conf" placeholder="Mot de passe" required>
 			</div>
 		  </div>
 
