@@ -73,6 +73,7 @@ function supprimerLig(id,cond,tab){
 		if (this.readyState == 4 && this.status == 200) {
 			show_ressource();
 			show_searcher();
+			document.getElementById("erreur").innerHTML = this.responseText;
 		}
 	};
 	

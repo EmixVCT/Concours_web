@@ -10,7 +10,7 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 ?>
 <script src="scripts/afficher.js" type="text/javascript"></script>
 
-
+<div id="erreur"></div>
 <div class="row mbr-justify-content-center">
 	<div class="col-lg-6 mbr-col-md-10">
         <div class="wrap">
