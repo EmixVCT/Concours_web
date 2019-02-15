@@ -53,8 +53,10 @@
 	$resultat=mysqli_query($connexion,$reqSelect);
 	
 	$informations = array() ;
+	$nbRes = 0 ;
 	
 	while ($ligne=mysqli_fetch_row($resultat)) {
+		$nbRes +=1 ;
 		foreach($ligne as $num => $info) {
 			if ($num == 0) {
 				$pdf ->setXY($x,$y) ;
@@ -69,7 +71,11 @@
 			}
 	
 		}
-	} 
+	}
+		
+	if ($nbRes == 0) {
+		$pdf -> Cell(400,40, "Aucune réservation ce jour-ci.",1,0, 'C') ;
+	}
 		
 	//Affichage de la date de création du PDF (date courante)
 	$pdf ->setXY(15,20) ;

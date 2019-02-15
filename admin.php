@@ -80,15 +80,18 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 		</div>
 	</div>
 </div>
-	
+<br/>	
 <table>
 		<tr>
 			<td>
+				<label>Générer un PDF listant les ressources réservées pour un jour choisi :</label>
 				<form class="form-group" action="creationPDF.php" method="post">
 					<input type="date" name="date" id="date"></input>
-					<button type="submit" class="btn btn-info">Générer le PDF</button>
+					<button type="submit" class="btn btn-info" style="margin:20px;">Générer le PDF</button>
 				</form>
 			</td>
+		</tr>
+		<tr>
 			<td>
 				<form class="form-group" action="logout.php" method="post">
 					<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
@@ -96,7 +99,6 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			</td>
 		</tr>
     </table>
-
 <?php
 require_once($fichiersInclude.'footer.html'); 
 ?>
