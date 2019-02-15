@@ -4,7 +4,7 @@
 	require("fpdf/fpdf.php"); //lien vers le fichier contenant la classe FPDF
 	require_once("fonctions.php") ; //On inclue la fonction de calcul des tableaux
 	
-	if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette page alors que l'on est pas connecté / ou que l'on n'est pas un administrateur
+	if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette page alors que l'on est pas connectÃ© / ou que l'on n'est pas un administrateur
 		header('Location: index.php'); #On redirige vers la page de connexion
 		exit;
 	}
@@ -21,14 +21,14 @@
 	
 	// CREATION DU PDF :
 	$pdf = new FPDF("P","pt","A4"); 
-	//création d'une instance de classe:
+	//crÃ©ation d'une instance de classe:
 		//L = Landscape (orientation paysage)
-		//pt pour point en unité de mesure
+		//pt pour point en unitÃ© de mesure
 		//A4 pour le format
 	
 	$pdf ->AddPage(); //permet d'ajouter une page
 	
-	//Affichage de la date de génération du document
+	//Affichage de la date de gÃ©nÃ©ration du document
 	$pdf ->SetFont('Times','',12); //choix de la police
 	$pdf ->setXY(90,120) ;
 	$pdf -> Cell(200,40, 'Utilisateur',1,0, 'C') ;
@@ -39,12 +39,12 @@
 	$y = 160 ;
 	$pdf ->setXY(90,160) ;
 	
-	//Récupération de la date choisie
+	//RÃ©cupÃ©ration de la date choisie
 	$dateFormatBD = $_POST['date'] ;
 	$date = date("d/m/Y", strtotime($_POST["date"])) ;
 	
 	
-	//Récupération des données dans la base de données :
+	//RÃ©cupÃ©ration des donnÃ©es dans la base de donnÃ©es :
 	$reqSelect="SELECT U.nom, R.nom FROM reservation, ressources R, utilisateur U 
 					WHERE date='$dateFormatBD' AND id_chercheur=id_usr 
 											AND id_ressource = id_rsc
@@ -74,10 +74,10 @@
 	}
 		
 	if ($nbRes == 0) {
-		$pdf -> Cell(400,40, "Aucune réservation ce jour-ci.",1,0, 'C') ;
+		$pdf -> Cell(400,40, "Aucune rÃ©servation ce jour-ci.",1,0, 'C') ;
 	}
 		
-	//Affichage de la date de création du PDF (date courante)
+	//Affichage de la date de crÃ©ation du PDF (date courante)
 	$pdf ->setXY(15,20) ;
 	$pdf ->Write(0,date('j/n/Y')) ;
 	
@@ -85,7 +85,7 @@
 	$pdf ->SetFont('Times','B',15); //choix de la police
 	//Affichage du titre et du logo
 	$pdf ->setXY(110,70) ;
-	$pdf -> Write(0, "Ressources reservées le $date") ;
+	$pdf -> Write(0, "Ressources reservÃ©es le $date") ;
 	$pdf ->Image("images/uvsq.jpg",455,0, 150,92); //insertion du logo
 	
 	
@@ -96,10 +96,9 @@
 	
 	//Pied de page : Informations diverses
 	$pdf ->setXY(150,760) ;
-	$pdf ->Write(0,"IUT de Vélizy - Concours Web 2019 - Département informatique") ;
+	$pdf ->Write(0,"IUT de VÃ©lizy - Concours Web 2019 - DÃ©partement informatique") ;
 	$pdf ->setXY(125,775) ;
 	$pdf ->SetFont('Times','',7); //choix de la police
-	$pdf ->Write(0,"VATHONNE Thomas - KACZMAREK Guillaume - HARDY Raphaël - PREVOT Carmen - VINCENT Maxime") ;
-	$pdf ->Output(); //génère le PDF et l'affiche	
-
+	$pdf ->Write(0,"VATHONNE Thomas - KACZMAREK Guillaume - HARDY RaphaÃ«l - PREVOT Carmen - VINCENT Maxime") ;
+	$pdf ->Output(); //gÃ©nÃ¨re le PDF et l'affiche	
 ?>

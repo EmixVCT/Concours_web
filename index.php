@@ -1,11 +1,11 @@
-<?php	
+<?php
 include "include/header.html";
 ?>
-	
+
 	<br/><h1>Accueil - Home Page</h1>
 	<br/>
-	
-	
+
+
 	<h3>Sécurité</h3>
 	<h4>Authentification</h4>
 	<p>Le site possède deux types de compte ; un compte administrateur et plusieurs comptes utilisateurs.
@@ -13,14 +13,14 @@ include "include/header.html";
 	par un hachage des mots de passe. Ainsi, les mots de passe ne sont pas stoqués en clair, minimisant les risques de vol de comtpe.</p>	
 	<h4>Déconnexion</h4>
 	<p>Une déconnexion propre et sécurisée est fournie par le site. En outre, cela évite l'accès à des pages non autorisées.</p>	
-	
+
 	<h3>En tant qu'utilisateur...</h3>
 	<p>Je peux :
 		<li>Réserver une ressource pour une journée donnée.</li>
 		<li>Voir l'historique de mes ressources réservées.</li>
 		<b>ATTENTION :</b> Je ne peux réserver qu'une seule ressource par jour.	
 	</p>
-	
+
 	<h3>En tant qu'administrateur...</h3>
 	<p>Je peux :
 		<li>Visualiser la liste courante des ressources et des chercheurs.</li>
@@ -38,14 +38,14 @@ include "include/header.html";
 	<h4>Log out</h4>
 	<p>A clean and secured log out is ensured by this website. Moreover, it avoid unauthorized access to pages.
 	</p>	
-	
+
 	<h3>As a user...</h3>
 	<p>I can :
 		<li>Register a resource for a choosen day.</li>
 		<li>See the history of my reserved resources.</li>
 		<b>WARNING :</b> I can only choose one resource a day.	
 	</p>
-	
+
 	<h3>As an administrator...</h3>
 	<p>I can :
 		<li>Oversee the current list of resources and seekers.</li>
@@ -53,10 +53,11 @@ include "include/header.html";
 		<li>Create a PDF file listing the used resources for a selected day.</li>
 	</p>
 	<br/>
-	
+
 	<h3>Bonne navigation ! - Enjoy your navigation !</h3>
-	<p><a href="connect.php" target="_blank"> <input type="button" value="S'authentifier" class="btn btn-danger" style="margin:10px;"></a></p>
+	<form class="form-group" action="connect.php" method="post">
+		<button type="submit" class="btn btn-danger" style="margin:20px;">S'authentifier</button>
+	</form>
 
 <?php	
 include "include/footer.html";
-?>

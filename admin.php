@@ -10,6 +10,7 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 ?>
 <script src="scripts/afficher.js" type="text/javascript"></script>
 
+<div id="erreur"></div>
 
 <div class="row mbr-justify-content-center">
 	<div class="col-lg-6 mbr-col-md-10">
@@ -37,9 +38,12 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			<div id='ressources'></div>
 			
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-				<h4>
-				Ajouter une nouvelle ressource
-				<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				
+				<form action="ajout_ressources.php" method="POST">
+					<h4>
+					Ajouter une nouvelle ressource :
+					<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				</form>
 				</h4>
 			</div>
 
@@ -70,9 +74,10 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			<div id='searchers'></div>
 			
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-				<h4>
-				Ajouter un nouveau chercheur :
+				
 				<form action="ajout_chercheur.php" method="POST">
+					<h4>
+					Ajouter un nouveau chercheur :
 					<button id ="ajouter_chercheur" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
 				</form>
 				</h4>
@@ -80,7 +85,7 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 		</div>
 	</div>
 </div>
-<br/>	
+	
 <table>
 		<tr>
 			<td>
@@ -98,7 +103,8 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 				</form>
 			</td>
 		</tr>
-    </table>
+</table>
+
 <?php
 require_once($fichiersInclude.'footer.html'); 
 ?>
