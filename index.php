@@ -18,7 +18,6 @@ include "include/header.html";
 	<p>Je peux :
 		<li>Réserver une ressource pour une journée donnée.</li>
 		<li>Voir l'historique de mes ressources réservées.</li>
-		<b>ATTENTION :</b> Je ne peux réserver qu'une seule ressource par jour.	
 	</p>
 
 	<h3>En tant qu'administrateur...</h3>
@@ -43,7 +42,6 @@ include "include/header.html";
 	<p>I can :
 		<li>Register a resource for a choosen day.</li>
 		<li>See the history of my reserved resources.</li>
-		<b>WARNING :</b> I can only choose one resource a day.	
 	</p>
 
 	<h3>As an administrator...</h3>
