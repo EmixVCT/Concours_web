@@ -82,6 +82,12 @@ function supprimerLig(id,cond,tab){
 }
 
 
+
+
+
+
+
+/*
 function modifierEtu(id){
 	entete = "id="+id; 
 	
@@ -187,4 +193,4 @@ function empty(obj) {
             return false;
     }
     return true;
-}
+}*/
