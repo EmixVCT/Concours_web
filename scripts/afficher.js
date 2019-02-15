@@ -67,18 +67,23 @@ function supprimerLig(id,cond,tab){
 	entete += "&tab=" +tab; 
 	
 	xhrSupp = new XMLHttpRequest();
+
 	xhrSupp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("modifEtu").innerHTML = this.responseText;
+			show_ressource();
+			show_searcher();
 		}
 	};
+	
 	console.log(entete);
 
-	xhrSupp.open("POST","scripts/php/suppLigneTable.php",true);
+	xhrSupp.open("POST","scripts/supp_ligne.php",true);
 	xhrSupp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xhrSupp.send(entete);
 	
-	show_ressource();
+
+	
+	
 }
 
 

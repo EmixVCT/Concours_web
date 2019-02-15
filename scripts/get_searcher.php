@@ -29,7 +29,7 @@ if (mysqli_num_rows($resultat) != 0){ ?>
 				}
 			}
 			?>
-			<td align="center" > <input type='button' class="btn btn-outline-danger" name='supp' value='supprimer' onclick='supprimerLig("<?php echo $ligne[0]; ?>","id_usr","info")'/></td>
+			<td align="center" > <input type='button' class="btn btn-outline-danger" name='supp' value='supprimer' onclick='supprimerLig("<?php echo $ligne[0]; ?>","id_usr","utilisateur")'/></td>
 			<!--<td align="center"> <input type='button' class="btn btn-outline-primary" name='modif' value='modifier' onclick='modifierChercheur("<?php //echo $ligne[0]; ?>")'/></td>-->
 			</tr>
 			<?php

@@ -65,21 +65,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 </div>
 	
 
-	<table>
-		<tr>
-			<td>
-				<form class="form-group" action="creationPDF.php" method="post">
-					<button type="submit" class="btn btn-info">Générer le PDF</button>
-				</form>
-			</td>
-			<td>
-				<form class="form-group" action="logout.php" method="post">
-					<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
-				</form>
-			</td>
-		</tr>
-    </table>
-	
+<form class="form-group" action="logout.php" method="post">
+	<button type="submit" class="btn btn-danger" style="margin:20px;">Se déconnecter</button>
+</form>
 
 
 <?php
