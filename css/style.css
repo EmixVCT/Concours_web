@@ -21,3 +21,15 @@ body{
 	padding: 0px;
 
 }
+
+.contenu{
+	border-radius:2px;
+	/*background-color: #fff;*/
+	padding: 20px 100px 20px 100px; /*haut , gauche , bas,droite*/
+}
+/*
+thead{
+	background-color:#000;
+	
+}
+*/
