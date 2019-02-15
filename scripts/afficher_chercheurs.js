@@ -3,6 +3,13 @@ window.onload = initPage;
 
 function initPage(){
 	
+	var searchInput = document.getElementById("input_hist");
+	addListenerMulti(searchInput, "change keydown paste input",function (event) {show_historique();} );
+	
+	var searchInput = document.getElementById("input_ressource");
+	addListenerMulti(searchInput, "change keydown paste input",function (event) {show_ressource();} );
+	
+	
 	show_ressource();
 	show_historique();
 	
@@ -60,10 +67,11 @@ function show_historique(){
 function reserver(id){
 	entete = "id="+id; 
 
-	xhrSupp = new XMLHttpRequest();
+	xhrReserver = new XMLHttpRequest();
 
-	xhrSupp.onreadystatechange = function() {
+	xhrReserver.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("test").innerHTML = this.responseText;
 			show_ressource();
 			show_historique();
 		}
@@ -71,9 +79,9 @@ function reserver(id){
 	
 	console.log(entete);
 
-	xhrSupp.open("POST","scripts/reservation.php",true);
-	xhrSupp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	xhrSupp.send(entete);
+	xhrReserver.open("POST","scripts/reservation.php",true);
+	xhrReserver.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xhrReserver.send(entete);
 }
 
 

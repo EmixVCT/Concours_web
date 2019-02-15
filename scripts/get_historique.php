@@ -1,10 +1,10 @@
 <?php
 
 require_once("../config.php");
-	$requete="SELECT nom FROM ressources WHERE id_rsc in (SELECT id_ressource FROM reservation where id_chercheur in (SELECT id_usr FROM utilisateur where nom like '".$_SESSION['id']."'))";
+$requete="SELECT nom FROM ressources WHERE id_rsc in (SELECT id_ressource FROM reservation where id_chercheur in (SELECT id_usr FROM utilisateur where nom like '".$_SESSION['id']."'))";
 
 if (isset($_POST['nom']) and !empty($_POST['nom'])){
-	$requete .= " where nom like '%".$_POST['nom']."%' ";
+	$requete .= " and nom like '%".$_POST['nom']."%' ";
 }
 $requete .= ";";
 

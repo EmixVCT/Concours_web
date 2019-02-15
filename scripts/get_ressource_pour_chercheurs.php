@@ -2,8 +2,9 @@
 
 require_once("../config.php");
 $requete="SELECT id_rsc,nom FROM ressources WHERE id_rsc not in (SELECT id_ressource FROM reservation where statut = 1)";
+
 if (isset($_POST['nom']) and !empty($_POST['nom'])){
-	$requete .= " where nom like '%".$_POST['nom']."%' ";
+	$requete .= " and nom like '%".$_POST['nom']."%' ";
 }
 $requete .= ";";
 
