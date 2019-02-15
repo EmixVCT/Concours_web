@@ -1,5 +1,8 @@
-body { 
-	padding-top: 95px; 
+/*La fenetre*/
+body{
+	background-color: #ecf0f1;
+	color: #000;
+	max-width:100%
 }
 
 .texte-centre {
@@ -12,4 +15,9 @@ body {
 
 .button-margin {
 	margin:20px;
+}
+.jumbotron {
+	background-color: #fff;
+	padding: 0px;
+
 }
