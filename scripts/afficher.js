@@ -16,13 +16,21 @@ function initPage(){
 		}
 	};
 	
-	document.getElementById("recherche_ressource").onclick = show_ressource;
-	document.getElementById("recherche_chercheurs").onclick = show_searcher;
+	var searchInput = document.getElementById("input_chercheur");
+	addListenerMulti(searchInput, "change keydown paste input",function (event) {show_searcher();} );
+	
+	var searchInput = document.getElementById("input_ressource");
+	addListenerMulti(searchInput, "change keydown paste input",function (event) {show_ressource();} );
 	
 	show_ressource();
 	show_searcher();
+	
+
 }
 
+function addListenerMulti(el, s, fn) {
+	s.split(' ').forEach(e => el.addEventListener(e, fn, false));
+}
 
 function show_ressource(){
 	stringSend = "";

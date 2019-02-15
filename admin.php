@@ -28,11 +28,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 							<div class="input-group-prepend">
 								<span class="input-group-text" id="nom_input">Nom</span>
 							</div>
-							<input type="text" class="form-control" aria-describedby="nom_input" name='nom'>
+							<input id = "input_ressource" type="text" class="form-control" aria-describedby="nom_input" name='nom'>
 						</div>
 					</div>
-				
-					<button id='recherche_ressource' type="button" name='recherche_ressource' value='Rechercher' class='btn btn-outline-secondary'>Rechercher</button>
 				</div><br/>
 			</form>
 			
@@ -55,11 +53,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 							<div class="input-group-prepend">
 								<span class="input-group-text" id="nom_input">Nom</span>
 							</div>
-							<input type="text" class="form-control" aria-describedby="nom_input" name='nom'>
+							<input id="input_chercheur" type="text" class="form-control" aria-describedby="nom_input" name='nom'>
 						</div>
 					</div>
-				
-				<button id='recherche_chercheurs' type="button" name='recherche_chercheurs' value='Rechercher' class='btn btn-outline-secondary'>Rechercher</button>
 				</div><br/>
 			</form>
 			
