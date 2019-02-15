@@ -11,9 +11,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 if ( (isset($_POST['pwd_conf'],$_POST['pwd'],$_POST["id"])) AND !(empty($_POST['id']) && empty($_POST['pwd']) && empty($_POST['pwd_conf'])) ) { #On vérifie la validité du formulaire
 
 	if ($_POST['pwd_conf'] == $_POST['pwd']){
-		$req = "INSERT INTO info (name,pwd,rang) VALUES ('".$_POST['id']."','".$_POST['pwd']."',1);";
-		mysqli_query($connexion,$req) or die('Erreur SQL !'.$sql.'<br />'.mysqli_error($connexion));
-		echo $req;
+		$req = "INSERT INTO utilisateur (nom,mdp,rang) VALUES ('".$_POST['id']."','".$_POST['pwd']."',1);";
+		mysqli_query($connexion,$req) or die('Erreur SQL !<br />'.mysqli_error($connexion));
+		header('Location: admin.php');
 	}else{
 		header('Location: ajout_chercheur.php?erreur='.sha1("C'est une erreur !"));
 	}
@@ -32,7 +32,13 @@ else { #Si l'envoi du formulaire est incorrect ou que l'on accède à la page d'
 		</div>
 
 		<form class="form-group" action="" method="post">
-
+			<hr>
+			<?php 
+			
+			  if (isset($_GET['erreur'])) { #Si il y a eu une erreur on l'affiche
+				afficherErreur("Les <strong>mot de passe</strong> doivent être identique !");
+			  }
+			?>
 			<div class="row">
 
 			<div class="col-md-3"></div>
