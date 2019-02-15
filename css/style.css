@@ -1,0 +1,15 @@
+body { 
+	padding-top: 65px; 
+}
+
+.texte-centre {
+	text-align: center;
+}
+
+.texte-size2 {
+	font-size: small;
+}
+
+.button-margin {
+	margin:20px;
+}
