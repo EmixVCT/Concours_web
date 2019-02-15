@@ -5,7 +5,7 @@
   if (estConnecte()) { #Si l'utilisateur est déjà connecté
     redirigerBonnePage(); #On le dirige à sa bonne page
   }
-  require_once($fichiersInclude.'head.php') #On inclut l'entête
+  require_once($fichiersInclude.'header.html') #On inclut l'entête
 ?>
 
   <div id="container" class="container mt-5">
@@ -53,4 +53,4 @@
 
   </div>
 
-<?php require_once($fichiersInclude.'footer.php'); #On inclut le pied de page ?>
+<?php require_once($fichiersInclude.'footer.html'); #On inclut le pied de page ?>
