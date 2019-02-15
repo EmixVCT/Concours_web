@@ -72,6 +72,10 @@ else { #Si l'envoi du formulaire est incorrect ou que l'on accède à la page d'
 		  </div>
 
 		</form>
+		
+		<form class="form-group" action="admin.php" method="post">
+			<button type="submit" class="btn btn-outline-danger" style="margin:20px;"><i class="fas fa-angle-left"></i> Retour</button>
+		</form>
 	</div>
 	<?php
 }
