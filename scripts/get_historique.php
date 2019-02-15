@@ -1,9 +1,7 @@
 <?php
 
 require_once("../config.php");
-
-	echo $login;
-	$requete="SELECT nom FROM ressources WHERE id_rsc in (SELECT id_ressource FROM reservation where id_chercheur in (SELECT id_usr FROM utilisateur where nom like '$session_id'))";
+	$requete="SELECT nom FROM ressources WHERE id_rsc in (SELECT id_ressource FROM reservation where id_chercheur in (SELECT id_usr FROM utilisateur where nom like '".$_SESSION['id']."'))";
 
 if (isset($_POST['nom']) and !empty($_POST['nom'])){
 	$requete .= " where nom like '%".$_POST['nom']."%' ";
@@ -28,7 +26,6 @@ if (mysqli_num_rows($resultat) != 0){ ?>
 				echo '<td align="center">'. $val.'</td>';
 			}
 			?>
-			
 			
 			</tr>
 			<?php

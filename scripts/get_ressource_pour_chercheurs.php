@@ -1,7 +1,7 @@
 <?php
 
 require_once("../config.php");
-$requete="SELECT nom FROM ressources WHERE id_rsc in (SELECT id_ressource FROM reservation where statut = 0)";
+$requete="SELECT id_rsc,nom FROM ressources WHERE id_rsc not in (SELECT id_ressource FROM reservation where statut = 1)";
 if (isset($_POST['nom']) and !empty($_POST['nom'])){
 	$requete .= " where nom like '%".$_POST['nom']."%' ";
 }
@@ -23,10 +23,12 @@ if (mysqli_num_rows($resultat) != 0){ ?>
 		while ($ligne=mysqli_fetch_row($resultat)) {	
 			echo "<tr>";
 			foreach($ligne as $k => $val){	
-				echo '<td align="center">'. $val.'</td>';
+				if ($k == 1){
+					echo '<td align="center">'. $val.'</td>';
+				}
 			}
 			?>
-			<td align="center"> <input type='button' class="btn btn-outline-primary" name='reserver' value='Reserver' onclick='reserver("<?php echo $ligne[0]; ?>","id_rsc",$session_id)'/></td>
+			<td align="center"> <input type='button' class="btn btn-outline-primary" name='reserver' value='Reserver' onclick='reserver("<?php echo $ligne[0]; ?>")'/></td>
 			
 			</tr>
 			<?php

@@ -56,35 +56,10 @@ function show_historique(){
 
 
 
-function supprimerLig(id,cond,tab){
+
+function reserver(id){
 	entete = "id="+id; 
-	entete += "&cond="+cond;
-	entete += "&tab=" +tab; 
-	
-	xhrSupp = new XMLHttpRequest();
 
-	xhrSupp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			show_ressource();
-			show_historique();
-		}
-	};
-	
-	console.log(entete);
-
-	xhrSupp.open("POST","scripts/supp_ligne.php",true);
-	xhrSupp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	xhrSupp.send(entete);
-}
-
-
-
-
-function reserver(id,cond,tab){
-	entete = "id="+id; 
-	entete += "&cond="+cond;
-	entete += "&tab=" +tab; 
-	
 	xhrSupp = new XMLHttpRequest();
 
 	xhrSupp.onreadystatechange = function() {
