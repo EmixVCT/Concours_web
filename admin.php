@@ -39,7 +39,9 @@ if (!estConnecte() OR $_SESSION['role'] != "admin") { #Si on arrive sur cette pa
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 				<h4>
 				Ajouter une nouvelle ressource
-				<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				<form action="ajout_ressources.php" method="POST">
+					<button id ="ajouter_ressource" class="btn btn-outline-primary" style="margin:20px;">Ajouter</button>
+				</form>
 				</h4>
 			</div>
 
