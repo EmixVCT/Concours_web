@@ -35,7 +35,8 @@
     }
     function estConnecte() { //Renvoie si une personne est connectée ou non
         
-        $roles = array("admin", "etudiant", "professeur");
+        $roles = array("admin", "chercheur");
+		
         if (isset($_SESSION['id']) AND isset($_SESSION['role'])) {
             
             if ( (!empty($_SESSION['id'])) AND in_array($_SESSION['role'], $roles) ) {
